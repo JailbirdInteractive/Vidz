@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="5dp"
+    app:cardBackgroundColor="#ccc"
+    >
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        >
+
+        <ImageView
+            android:id="@+id/vid_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            android:src="@drawable/beach_girl"
+            app:srcCompat="@drawable/beach_girl"
+            tools:srcCompat="@tools:sample/backgrounds/scenic"
+            android:visibility="gone"
+            />
+        <com.marcinmoskala.videoplayview.VideoPlayView
+            android:id="@+id/picassoVideoView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:loop="true"
+            app:autoplay="false"
+            android:background="@drawable/beach_girl"
+            app:videoUrl="https://vidzapp-bucket.s3.amazonaws.com/VID_20200812_090957.mp4"
+            />
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:gravity="center"
+            android:text="vid"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/vid_view"
+            app:layout_constraintHorizontal_bias="0.121"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/vid_view"
+            app:layout_constraintVertical_bias="0.882" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_gravity="bottom|right"
+    android:layout_marginBottom="70dp"
+
+    >
+    <com.github.abdularis.civ.CircleImageView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@drawable/beach_girl"
+        app:highlightColor="@color/colorAccent"
+        app:strokeColor="#fff"
+        app:strokeWidth="5px"
+        android:padding="10dp"
+        />
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/ic_favorite"
+        android:id="@+id/fav_btn"
+        android:padding="10dp"
+        />
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/ic_comment"
+        android:id="@+id/cmt_btn"
+        android:padding="10dp"
+        />
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/ic_share"
+        android:id="@+id/shr_btn"
+        android:padding="10dp"
+        />
+</LinearLayout>
+</androidx.cardview.widget.CardView>

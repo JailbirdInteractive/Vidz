@@ -1,0 +1,65 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.1"
+
+    defaultConfig {
+        applicationId "com.example.vidz"
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    /* dataBinding {
+        enabled = true
+    }*/
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        // Support for Java 8 features
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
+    //implementation 'life.sabujak:shyshark:0.0.3'
+
+//EXTERNAL LIBS
+    implementation 'com.github.igalata:Bubble-Picker:v0.2.4'
+    implementation 'com.github.nihad92:SwipeableCards:1.0.19'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'com.github.marcinmoskala:VideoPlayView:0.0.2'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'com.github.abdularis:CircularImageView:1.4'
+    implementation 'com.google.android.material:material:1.2.0'
+    implementation 'com.github.tizisdeepan:gallerypicker:1.0.1'
+    implementation 'com.github.jksiezni.permissive:permissive:0.2'
+    implementation 'gun0912.ted:tedimagepicker:1.0.8'
+    implementation 'com.fxn769:pix:1.5.3'
+//FIREBASE
+    implementation 'com.google.firebase:firebase-storage:16.0.4'
+    implementation 'com.google.firebase:firebase-auth:16.0.5'
+
+//AWS AMPLIFY
+    implementation 'com.amplifyframework:core:1.1.2'
+    implementation 'com.amplifyframework:aws-storage-s3:1.1.2'
+    implementation 'com.amplifyframework:aws-auth-cognito:1.1.2'
+    implementation 'androidx.annotation:annotation:1.1.0'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+}
